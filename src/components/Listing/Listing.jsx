@@ -1,3 +1,5 @@
+import LikeButton from '../LikeButton/LikeButton';
+
 const titleCase = (str) => {
   return str
     .toLowerCase()
@@ -14,6 +16,8 @@ const Listing = ({ photo, address, listingDate, listPrice, property }) => {
 
   return (
     <div className="m-2 card border-light col-sm-3" style={{ width: '290px' }}>
+      {/* TODO: create a fallback image for when an image is broken/missing */}
+      <LikeButton />
       <img
         src={photo}
         alt=""

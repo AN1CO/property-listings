@@ -13,8 +13,9 @@ const Listings = () => {
 
   return (
     <div className="container-sm">
-      <div className="row gap-2">
+      <div className="row gap-2 justify-content-sm-center">
         {listings.map((listing) => {
+          console.log(listing);
           const { address, property, listDate, listPrice, photos } = listing;
 
           return (
