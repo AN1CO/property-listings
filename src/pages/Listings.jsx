@@ -17,11 +17,10 @@ const Listings = () => {
         {listings.map((listing) => {
           const { address, property, listDate, listPrice, photos, mlsId } =
             listing;
-
           return (
             <Listing
               key={mlsId}
-              id={mlsId}
+              mlsId={mlsId}
               address={address}
               listingDate={listDate}
               property={property}

@@ -12,7 +12,14 @@ const titleCase = (str) => {
     .join(' ');
 };
 
-const Listing = ({ photo, address, listingDate, listPrice, property, id }) => {
+const Listing = ({
+  photo,
+  address,
+  listingDate,
+  listPrice,
+  property,
+  mlsId,
+}) => {
   const [like, setLike] = useState(false);
   const baths = property.bathsFull + property.bathsHalf * 0.5;
   const date = new Date(listingDate);
@@ -23,9 +30,7 @@ const Listing = ({ photo, address, listingDate, listPrice, property, id }) => {
       style={{ width: '300px', border: 'none' }}
     >
       {/* TODO: create a fallback image for when an image is broken/missing */}
-      {/* TODO: should prevent passing unused props down between children. 
-      ideally photo with a like button would probably be its own component
-      if its often used  */}
+      {/* TODO: ask me why I didn't use alt text */}
       <img
         src={photo}
         alt=""
@@ -37,18 +42,18 @@ const Listing = ({ photo, address, listingDate, listPrice, property, id }) => {
       <div className="heart">
         <input
           type="image"
-          src={localStorage.getItem(id) || like ? heartFill : heartStroke}
-          name="like"
+          src={localStorage.getItem(mlsId) || like ? heartFill : heartStroke}
+          name="favorite"
           className="heart-btn"
           alt="favorite"
-          value={id}
+          value={mlsId}
           onClick={(e) => {
             const value = e.target.value;
             setLike(!like);
             if (like) {
               localStorage.removeItem(value);
             } else {
-              localStorage.setItem(id, id);
+              localStorage.setItem(`${mlsId}`, `${mlsId}`);
             }
           }}
         />

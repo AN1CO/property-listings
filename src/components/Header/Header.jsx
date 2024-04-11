@@ -7,7 +7,6 @@ const Header = () => {
       <div className="container-fluid">
         {/* TODO: add styled components to turn this NavLink into a styled component, instead of putting styles directly here */}
         <NavLink
-          exact
           to="/"
           className="navbar-brand"
           style={{
