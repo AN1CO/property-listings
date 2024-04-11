@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import LikeButton from '../LikeButton/LikeButton';
 import heartFill from '../../assets/heart-fill.svg';
 import heartStroke from '../../assets/heart-stroke.svg';
 
@@ -38,20 +37,14 @@ const Listing = ({ photo, address, listingDate, listPrice, property, id }) => {
       <div className="heart">
         <input
           type="image"
-          src={like ? heartFill : heartStroke}
+          src={localStorage.getItem(id) || like ? heartFill : heartStroke}
           name="like"
           className="heart-btn"
           alt="favorite"
           value={id}
-          // checked={likes[mlsId]}
           onClick={(e) => {
             const value = e.target.value;
-            const checked = e.target.checked;
             setLike(!like);
-            // setLikes({
-            //   ...likes,
-            //   [value]: !checked,
-            // });
             if (like) {
               localStorage.removeItem(value);
             } else {
