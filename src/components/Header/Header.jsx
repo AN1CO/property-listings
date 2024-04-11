@@ -3,7 +3,10 @@ import { useLocation, NavLink } from 'react-router-dom';
 const Header = () => {
   let location = useLocation();
   return (
-    <nav className="navbar navbar-expand-lg bg-light mb-2">
+    <nav
+      className="navbar navbar-expand-lg mb-2"
+      style={{ backgroundColor: '#F4F4F4' }}
+    >
       <div className="container-fluid">
         {/* TODO: add styled components to turn this NavLink into a styled component, instead of putting styles directly here */}
         <NavLink

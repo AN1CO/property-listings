@@ -12,8 +12,8 @@ const Listings = () => {
   }, []);
 
   return (
-    <div className="container-sm">
-      <div className="row gap-1 justify-content-sm-center">
+    <div className="container-sm pt-4">
+      <div className="d-flex row g-4 justify-content-between">
         {listings.map((listing) => {
           const { address, property, listDate, listPrice, photos, mlsId } =
             listing;

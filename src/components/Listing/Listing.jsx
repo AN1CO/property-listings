@@ -26,8 +26,8 @@ const Listing = ({
 
   return (
     <div
-      className="m-2 card col-sm-3"
-      style={{ width: '300px', border: 'none' }}
+      className="card col-sm-3"
+      style={{ minWidth: '315px', border: 'none' }}
     >
       {/* TODO: create a fallback image for when an image is broken/missing */}
       {/* TODO: ask me why I didn't use alt text */}
@@ -35,8 +35,8 @@ const Listing = ({
         src={photo}
         alt=""
         className="card-img-top rounded-1"
-        width="315"
-        height="280"
+        width={300}
+        height={280}
         style={{ objectFit: 'cover', position: 'relative' }}
       />
       <div className="heart">
@@ -45,6 +45,8 @@ const Listing = ({
           src={localStorage.getItem(mlsId) || like ? heartFill : heartStroke}
           name="favorite"
           className="heart-btn"
+          width={47}
+          height={47}
           alt="favorite"
           value={mlsId}
           onClick={(e) => {
