@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import LikeButton from '../LikeButton/LikeButton';
+import heartFill from '../../assets/heart-fill.svg';
+import heartStroke from '../../assets/heart-stroke.svg';
 
 const titleCase = (str) => {
   return str
@@ -10,22 +13,54 @@ const titleCase = (str) => {
     .join(' ');
 };
 
-const Listing = ({ photo, address, listingDate, listPrice, property }) => {
+const Listing = ({ photo, address, listingDate, listPrice, property, id }) => {
+  const [like, setLike] = useState(false);
   const baths = property.bathsFull + property.bathsHalf * 0.5;
   const date = new Date(listingDate);
 
   return (
-    <div className="m-2 card border-light col-sm-3" style={{ width: '290px' }}>
+    <div
+      className="m-2 card col-sm-3"
+      style={{ width: '300px', border: 'none' }}
+    >
       {/* TODO: create a fallback image for when an image is broken/missing */}
-      <LikeButton />
+      {/* TODO: should prevent passing unused props down between children. 
+      ideally photo with a like button would probably be its own component
+      if its often used  */}
       <img
         src={photo}
         alt=""
-        className="card-img-top"
+        className="card-img-top rounded-1"
         width="315"
         height="280"
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: 'cover', position: 'relative' }}
       />
+      <div className="heart">
+        <input
+          type="image"
+          src={like ? heartFill : heartStroke}
+          name="like"
+          className="heart-btn"
+          alt="favorite"
+          value={id}
+          // checked={likes[mlsId]}
+          onClick={(e) => {
+            const value = e.target.value;
+            const checked = e.target.checked;
+            setLike(!like);
+            // setLikes({
+            //   ...likes,
+            //   [value]: !checked,
+            // });
+            if (like) {
+              localStorage.removeItem(value);
+            } else {
+              localStorage.setItem(id, id);
+            }
+          }}
+        />
+      </div>
+
       {/* TODO: use styled components to cut down on styling repetition */}
       <h2
         style={{

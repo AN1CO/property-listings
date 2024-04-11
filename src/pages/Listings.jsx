@@ -13,13 +13,15 @@ const Listings = () => {
 
   return (
     <div className="container-sm">
-      <div className="row gap-2 justify-content-sm-center">
+      <div className="row gap-1 justify-content-sm-center">
         {listings.map((listing) => {
-          console.log(listing);
-          const { address, property, listDate, listPrice, photos } = listing;
+          const { address, property, listDate, listPrice, photos, mlsId } =
+            listing;
 
           return (
             <Listing
+              key={mlsId}
+              id={mlsId}
               address={address}
               listingDate={listDate}
               property={property}
