@@ -59,15 +59,15 @@ A new route can be added for a `details` page when a card is clicked on and redi
 
 I chose to organize tests so they are in the same folder as their components/pages/functions it is testing, instead of making a separate `tests` folder. I prefer this style because its easier to find the tests if they need to be updated and its easy to spot if a feature is missing tests.
 
+Testing the following features:
+
 ### Listings.test
 
-Testing:
 - it is a list, to maintain accessibility
 - That is is receiving the data and displaying the multiple items
 
 ### Listing.test
 
-Testing:
 - Accessibility: card is represented as an `article` and includes the text within
 - Accessibility: the semantic `heading`, `<img>`, and `<button>` are present and displayed correctly 
 - All part of the card is displaying the translated data correctly
@@ -75,7 +75,6 @@ Testing:
 
 ### api.test
 
-Testing:
 - api is returning data, but this test could probably be improved or deleted because its just testing mock data
 
 ## To Do
