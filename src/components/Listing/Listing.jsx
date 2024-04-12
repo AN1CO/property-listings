@@ -23,16 +23,14 @@ const Listing = ({
   const [like, setLike] = useState(false);
   const baths = property.bathsFull + property.bathsHalf * 0.5;
   const date = new Date(listingDate);
-  {
-    /* TODO: would probably use a library to translate full state names 
+  /* TODO: would probably use a library to translate full state names 
     to abbreviations and make it more dynamic. hardcoded here just 
     for this particular test data */
-  }
   const addy = `${address.streetNumberText} ${titleCase(address.streetName)}, ${address.city}, ${address.state === 'Texas' ? 'TX' : null}`;
 
   return (
     <li className="col col-lg-4">
-      <section className="card" style={{ width: '315px', border: 'none' }}>
+      <article className="card" style={{ width: '315px', border: 'none' }}>
         {/* TODO: create a fallback image for when an image is broken/missing */}
         {/* TODO: photo with favorite button could be is own sub component */}
         <img
@@ -88,7 +86,7 @@ const Listing = ({
         <p
           style={{ fontSize: '14px', color: '#979797' }}
         >{`Listed: ${date.toLocaleDateString()}`}</p>
-      </section>
+      </article>
     </li>
   );
 };

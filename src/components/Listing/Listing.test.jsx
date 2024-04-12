@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Listing from './Listing';
 
@@ -51,24 +51,27 @@ describe('Listing', () => {
         property={testData.property}
       />,
     );
+
+    const card = screen.getByRole('article');
+    const { getByText } = within(card);
+
+    expect(card).toBeInTheDocument();
+    expect(getByText(/46761 West Deep Court, Katy, TX/i)).toBeInTheDocument();
+    expect(getByText('Listed: 3/6/1998')).toBeInTheDocument();
+
     const heading1 = screen.getByRole('heading', {
       name: '3 BR | 3.5 Bath | 2130 Sq Ft',
     });
     const heading2 = screen.getByRole('heading', {
       name: '$23,507,305',
     });
-    const paragraph1 = screen.getByText(/46761 West Deep Court, Katy, TX/i);
-    const paragraph2 = screen.getByText('Listed: 3/6/1998');
+
     const pic = screen.getByRole('img');
     const btn = screen.getByRole('button', { name: 'favorite' });
 
     expect(heading1).toBeInTheDocument();
     expect(heading2).toBeInTheDocument();
-    expect(paragraph1).toBeInTheDocument();
-    expect(paragraph2).toBeInTheDocument();
-
     expect(btn).toBeInTheDocument();
-
     expect(pic).toBeInTheDocument();
     expect(pic).toHaveAttribute(
       'src',
