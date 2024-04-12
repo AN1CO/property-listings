@@ -4,6 +4,14 @@
 - For any questions around Create React App (CRA), reference
   CRA_DOCUMENTATION.md
 
+# Screenshots
+
+<img width="1136" alt="Screenshot 2024-04-12 at 5 35 05 PM" src="https://github.com/AN1CO/property-listings/assets/14117410/d0d4d46e-3653-4fdb-99a7-f2ae19aa3d6d">
+
+<img width="740" alt="Screenshot 2024-04-12 at 5 35 26 PM" src="https://github.com/AN1CO/property-listings/assets/14117410/c711b293-cc03-4f20-a88d-f172aae8addd">
+
+<img width="291" alt="Screenshot 2024-04-12 at 5 36 09 PM" src="https://github.com/AN1CO/property-listings/assets/14117410/ce9108cf-627d-484e-b28e-de11674dcf3a">
+
 # Code and Design Decisions
 
 ## Folder Structure
