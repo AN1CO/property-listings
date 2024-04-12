@@ -25,10 +25,7 @@ const Listing = ({
   const date = new Date(listingDate);
 
   return (
-    <div
-      className="card col-sm-3"
-      style={{ minWidth: '315px', border: 'none' }}
-    >
+    <div className="card col-sm-3" style={{ width: '315px', border: 'none' }}>
       {/* TODO: create a fallback image for when an image is broken/missing */}
       {/* TODO: ask me why I didn't use alt text */}
       <img
