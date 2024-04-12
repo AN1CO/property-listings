@@ -23,6 +23,7 @@ const Listing = ({
   const [like, setLike] = useState(false);
   const baths = property.bathsFull + property.bathsHalf * 0.5;
   const date = new Date(listingDate);
+  const addy = `${address.streetNumberText} ${titleCase(address.streetName)}, ${address.city}, ${address.state === 'Texas' ? 'TX' : null}`;
 
   return (
     <div className="card col-sm-3" style={{ width: '315px', border: 'none' }}>
@@ -66,7 +67,9 @@ const Listing = ({
           lineHeight: '32px',
           color: '#2D2D2D',
         }}
-      >{`${property.bedrooms} BR | ${baths} Bath | ${property.area} Sq Ft`}</h2>
+      >
+        {`${property.bedrooms} BR | ${baths} Bath | ${property.area} Sq Ft`}
+      </h2>
       <h3
         style={{
           fontWeight: 700,
@@ -74,11 +77,11 @@ const Listing = ({
           lineHeight: '24px',
           color: '#2D2D2D',
         }}
-      >{`$${listPrice.toLocaleString()}`}</h3>
+      >
+        {`$${listPrice.toLocaleString()}`}
+      </h3>
       {/* TODO: would probably use a library to translate full state names to abbreviations and make it more dynamic. hardcoded here just for text data */}
-      <p
-        style={{ fontSize: '15px', color: '#2D2D2D' }}
-      >{`${address.streetNumberText} ${titleCase(address.streetName)}, ${address.city}, ${address.state === 'Texas' ? 'TX' : null}`}</p>
+      <p style={{ fontSize: '15px', color: '#2D2D2D' }}>{addy}</p>
       <p
         style={{ fontSize: '14px', color: '#979797' }}
       >{`Listed: ${date.toLocaleDateString()}`}</p>

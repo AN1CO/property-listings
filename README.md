@@ -6,4 +6,8 @@
 
 # Code and Design Decisions
 
-<!-- Please document your code & design decisions here. -->
+### Tests
+
+### Accessibility
+##### Empty Image alt
+

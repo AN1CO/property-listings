@@ -13,7 +13,7 @@ const Listings = () => {
 
   return (
     <div className="container-sm pt-4">
-      <div className="flex-sm-row row g-4 justify-content-between justify-content-sm-center justify-content-lg-start">
+      <div className="d-flex flex-sm-row row g-4 justify-content-center justify-content-lg-start">
         {listings.map((listing) => {
           const { address, property, listDate, listPrice, photos, mlsId } =
             listing;
