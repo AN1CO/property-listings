@@ -6,6 +6,12 @@
 
 # Code and Design Decisions
 
+## Folder Structure
+- `components` folder for sub-components
+- `pages` folder for items to display in routes
+- `api` folder to put all helper functions related to calling the api
+- no `tests` folder (explained in Test section)
+
 ## Accessibility
 
 ### Image Alt Tags
@@ -75,4 +81,6 @@ Testing:
 ## To Do
 - create a fallback image for when an image is broken/missing 
 - implement Styled Components to cut down on use of `style` attribute everywhere
+- create env file for api keys to simulate proper usage (it is a public api, so not a big deal right now)
 - update the contrast on the "Listed" date
+- create a `details` route and clickable cards that directs to page with more info on a specific property
