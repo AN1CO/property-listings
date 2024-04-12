@@ -1,11 +1,13 @@
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const heading = screen.getByRole(
-    'heading',
-    /Side React Take-home Assignment/i,
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
   );
+  const heading = screen.getByRole('heading', /Property Listings/i);
   expect(heading).toBeInTheDocument();
 });
