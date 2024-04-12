@@ -13,7 +13,9 @@ const Listings = () => {
 
   return (
     <div className="container-sm pt-4">
-      <div className="d-flex flex-sm-row row g-4 justify-content-center justify-content-lg-start">
+      {/* <ul className="d-flex flex-sm-row row g-4 justify-content-center justify-content-lg-start">
+       */}
+      <ul className="d-flex flex-sm-row">
         {listings.map((listing) => {
           const { address, property, listDate, listPrice, photos, mlsId } =
             listing;
@@ -29,7 +31,7 @@ const Listings = () => {
             />
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };

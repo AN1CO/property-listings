@@ -12,6 +12,21 @@ code {
     monospace;
 }
 
+ul {
+  list-style-type: none;
+  display: inherit;
+  padding: 0;
+  margin: 0 auto;
+  columns: 3;
+}
+
+li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+}
+
 .heart {
   position: absolute;
   top: 5px;
