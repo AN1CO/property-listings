@@ -27,14 +27,11 @@ li {
   margin: 0;
 }
 
-.heart {
+.heart-btn {
   position: absolute;
   top: 5px;
-  right: 20px;
-
-  .heart-btn {
-    &:hover {
-      transform: scale(1.5);
-    }
+  right: 10px;
+  &:hover {
+    transform: scale(1.5);
   }
 }

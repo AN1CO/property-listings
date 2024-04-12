@@ -24,6 +24,13 @@ You can refer to these links to learn more about writing efficient and helpful a
 https://accessibility.huit.harvard.edu/describe-content-images
 https://www.a11yproject.com/posts/are-you-making-these-five-mistakes-when-writing-alt-text/
 
+##### Lists and Sections for Cards
+
+Refer to these links on making accessible cards:
+https://marketsplash.com/html-section-vs-div/
+https://a11y-style-guide.com/style-guide/section-cards.html
+https://inclusive-components.design/cards/
+
 ### React Router
 
 ##### Header/Nav
@@ -35,6 +42,18 @@ Added a Header/Nav that stays on the page and can be updated with more accurate 
 A new route can be added for a `details` page when a card is clicked on and redirected to a page with more info on that property
 
 ### Tests
+
+##### Listings.test
+
+Testing:
+- it is a list, to maintain accessibility
+- That is is receiving the data and displaying the multiple items
+
+##### Listing.test
+
+Testing:
+- All part of the card is displaying the translated data correctly
+- button functionality
 
 ### To Do
 - create a fallback image for when an image is broken/missing 

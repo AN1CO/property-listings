@@ -24,7 +24,9 @@ const Listing = ({
   const baths = property.bathsFull + property.bathsHalf * 0.5;
   const date = new Date(listingDate);
   {
-    /* TODO: would probably use a library to translate full state names to abbreviations and make it more dynamic. hardcoded here just for text data */
+    /* TODO: would probably use a library to translate full state names 
+    to abbreviations and make it more dynamic. hardcoded here just 
+    for this particular test data */
   }
   const addy = `${address.streetNumberText} ${titleCase(address.streetName)}, ${address.city}, ${address.state === 'Texas' ? 'TX' : null}`;
 
@@ -32,6 +34,7 @@ const Listing = ({
     <li className="col col-lg-4">
       <section className="card" style={{ width: '315px', border: 'none' }}>
         {/* TODO: create a fallback image for when an image is broken/missing */}
+        {/* TODO: photo with favorite button could be is own sub component */}
         <img
           src={photo}
           alt=""
@@ -40,27 +43,25 @@ const Listing = ({
           height={280}
           style={{ objectFit: 'cover', position: 'relative' }}
         />
-        <div className="heart">
-          <input
-            type="image"
-            src={localStorage.getItem(mlsId) || like ? heartFill : heartStroke}
-            name="favorite"
-            className="heart-btn"
-            width={47}
-            height={47}
-            alt="favorite"
-            value={mlsId}
-            onClick={(e) => {
-              const value = e.target.value;
-              setLike(!like);
-              if (like) {
-                localStorage.removeItem(value);
-              } else {
-                localStorage.setItem(`${mlsId}`, `${mlsId}`);
-              }
-            }}
-          />
-        </div>
+        <input
+          type="image"
+          src={localStorage.getItem(mlsId) || like ? heartFill : heartStroke}
+          name="favorite"
+          className="heart-btn"
+          width={47}
+          height={47}
+          alt="favorite"
+          value={mlsId}
+          onClick={(e) => {
+            const value = e.target.value;
+            setLike(!like);
+            if (like) {
+              localStorage.removeItem(value);
+            } else {
+              localStorage.setItem(`${mlsId}`, `${mlsId}`);
+            }
+          }}
+        />
 
         {/* TODO: use styled components to cut down on styling repetition */}
         <h2
