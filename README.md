@@ -16,7 +16,7 @@ I actually don't think alt text is appropriate in this case. Alt text should pro
 
 2) `alt'="[property address]"` - this is redundant, as the property address is already part of the card and will be read.
 
-3) `alt'="a modern home with a red roof"` - This adds context to the persons's visual features, but is overly complex because you would have to get a unique visual description for every property. 
+3) `alt'="a modern home with a red roof"` - This adds context to the persons's visual features, but is overly complex because you would have to get a unique visual description for every property. There could possibly be something in the the data that could sub for this type of info, but I didn't see anything in the test data that would be suitable.
 
 I think for maximum efficiency of screen reader usage, I think the alt text should be empty.
 
@@ -28,11 +28,11 @@ https://www.a11yproject.com/posts/are-you-making-these-five-mistakes-when-writin
 
 ##### Header/Nav
 
-Added a Header/Nav that stays on the page and can be updated with more accurate links as more routes are added
+Added a Header/Nav that stays on the page and can be updated with more accurate links/titles as more routes are added
 
 ##### Routes
 
-A new route can be added for a `details` page when a card is selected
+A new route can be added for a `details` page when a card is clicked on and redirected to a page with more info on that property
 
 ### Tests
 

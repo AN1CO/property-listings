@@ -29,8 +29,8 @@ const Listing = ({
   const addy = `${address.streetNumberText} ${titleCase(address.streetName)}, ${address.city}, ${address.state === 'Texas' ? 'TX' : null}`;
 
   return (
-    <li>
-      <div className="card col-sm-3" style={{ width: '315px', border: 'none' }}>
+    <li className="col col-lg-4">
+      <section className="card" style={{ width: '315px', border: 'none' }}>
         {/* TODO: create a fallback image for when an image is broken/missing */}
         <img
           src={photo}
@@ -87,7 +87,7 @@ const Listing = ({
         <p
           style={{ fontSize: '14px', color: '#979797' }}
         >{`Listed: ${date.toLocaleDateString()}`}</p>
-      </div>
+      </section>
     </li>
   );
 };
